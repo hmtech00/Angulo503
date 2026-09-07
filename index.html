@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Angulo 503 — Restaurante Salvadoreño a Milano</title>
+<meta name="description" content="Angulo 503, ristorante salvadoreño nel cuore di Milano. Un viaggio in El Salvador attraverso pupusas, sapori intensi e convivialità. Viale Luigi Torelli, 5, Milano.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="restaurant.restaurant">
+<meta property="og:title" content="Angulo 503 — Restaurante Salvadoreño a Milano">
+<meta property="og:description" content="Un viaggio in El Salvador, nel cuore di Milano. Pupusas, churrasco e sapori latinoamericani in Viale Luigi Torelli, 5.">
+<meta property="og:image" content="assets/images/hero.jpg">
+<meta property="og:locale" content="it_IT">
+<meta property="og:url" content="https://www.angulo503.it/">
+
+<!-- EDITAR AQUI — SEO: sostituire con il dominio definitivo -->
+<link rel="canonical" href="https://www.angulo503.it/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<!-- Schema.org Restaurant -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Angulo 503",
+  "servesCuisine": "Salvadoran",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Viale Luigi Torelli, 5",
+    "postalCode": "20158",
+    "addressLocality": "Milano",
+    "addressRegion": "MI",
+    "addressCountry": "IT"
+  },
+  "telephone": "+39 371 560 1539"
+}
+</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Vai al contenuto</a>
+
+<!-- ============================= -->
+<!-- HEADER -->
+<!-- ============================= -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#hero" class="logo" aria-label="Angulo 503 — Home">
+      <span class="logo-line">ANGULO</span><span class="logo-line logo-num">503</span>
+    </a>
+
+    <nav class="main-nav" aria-label="Navigazione principale">
+      <a href="#ristorante">RISTORANTE</a>
+      <a href="#menu-preview">MENU</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="#location">CONTATTI</a>
+    </nav>
+
+    <a href="#menu-preview" class="btn btn-outline header-cta">SCOPRI IL MENU</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile full-screen nav -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Navigazione mobile" aria-hidden="true">
+  <ul>
+    <li style="--i:0"><a href="#ristorante">Ristorante</a></li>
+    <li style="--i:1"><a href="#menu-preview">Menu</a></li>
+    <li style="--i:2"><a href="#gallery">Gallery</a></li>
+    <li style="--i:3"><a href="#location">Contatti</a></li>
+  </ul>
+  <div class="mobile-nav-footer">
+    <a href="tel:+393715601539">+39 371 560 1539</a>
+    <span>Viale Luigi Torelli, 5 — Milano</span>
+  </div>
+</nav>
+
+<main id="main">
+
+  <!-- ============================= -->
+  <!-- HERO -->
+  <!-- ============================= -->
+  <section class="hero" id="hero">
+    <div class="hero-media" data-placeholder="HERO — foto do salão ou prato principal, plano largo, 1920×1080+">
+      <!-- EDITAR AQUI — FOTOS: substituir por <img class="hero-img" src="assets/images/hero.jpg" alt="Sala do Angulo 503 em Milano" loading="eager" decoding="async"> -->
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-kicker reveal" style="--d:0">PEQUEÑO SABOR. GRAN VIAJE.</p>
+      <h1 class="hero-title">
+        <span class="reveal" style="--d:1">ANGULO</span>
+        <span class="reveal hero-title-num" style="--d:2">503</span>
+      </h1>
+      <p class="hero-sub reveal" style="--d:3">RESTAURANTE SALVADOREÑO — MILANO</p>
+
+      <div class="hero-ctas reveal" style="--d:4">
+        <a href="#menu-preview" class="btn btn-solid">SCOPRI IL MENU</a>
+        <a href="#location" class="btn btn-ghost">COME RAGGIUNGERCI</a>
+      </div>
+    </div>
+
+    <a href="#manifesto" class="scroll-indicator reveal" style="--d:5" aria-label="Scorri per scoprire">
+      <span class="scroll-line"></span>
+      <span>SCROLL TO DISCOVER</span>
+    </a>
+  </section>
+
+  <!-- ============================= -->
+  <!-- MANIFESTO -->
+  <!-- ============================= -->
+  <section class="manifesto" id="manifesto">
+    <div class="section-inner">
+      <div class="manifesto-labels">
+        <span>CUCINA</span><span>SALVADOREÑA</span><span>MILANO</span><span>503</span>
+      </div>
+      <h2 class="manifesto-title">
+        EL SALVADOR<br>
+        INCONTRA<br>
+        MILANO.
+      </h2>
+      <p class="manifesto-text">
+        Una cucina fatta di tradizione, sapori intensi e convivialità. Ingredienti veri, ricette
+        tramandate, piatti pensati per essere condivisi a tavola — un piccolo angolo di El Salvador
+        che incontra la vita di Milano.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- IL RISTORANTE -->
+  <!-- ============================= -->
+  <section class="ristorante" id="ristorante">
+    <div class="ristorante-media" data-placeholder="RISTORANTE — foto vertical do ambiente/interior">
+      <!-- EDITAR AQUI — FOTOS: substituir por <img src="assets/images/restaurant-interior.jpg" alt="Interno del ristorante Angulo 503" loading="lazy" decoding="async"> -->
+    </div>
+    <div class="ristorante-copy">
+      <span class="eyebrow">IL RISTORANTE</span>
+      <h2 class="section-title">
+        UNA TAVOLA<br>CHE RACCONTA<br>IL SALVADOR.
+      </h2>
+      <p class="body-text">
+        Ogni piatto nasce da una tradizione gastronomica autentica, portata a Milano senza perdere
+        la sua identità. Sapori decisi, ingredienti curati e l'idea che una buona tavola sia
+        soprattutto un momento condiviso.
+      </p>
+      <ul class="tag-list">
+        <li>PUPUSAS</li>
+        <li>TRADIZIONE</li>
+        <li>FAMIGLIA</li>
+        <li>SAPORE</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- PIATTI SIGNATURE -->
+  <!-- ============================= -->
+  <section class="signature" id="piatti">
+    <div class="section-inner">
+      <span class="eyebrow eyebrow-light">PIATTI SIGNATURE</span>
+      <h2 class="section-title section-title-light">SAPORI DA SCOPRIRE.</h2>
+    </div>
+    <div class="dish-grid" id="dishGrid"><!-- populated by script.js from menuData.signature --></div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- MENU CTA -->
+  <!-- ============================= -->
+  <section class="menu-cta">
+    <div class="section-inner menu-cta-inner">
+      <h2 class="menu-cta-title">READY TO TASTE<br>EL SALVADOR?</h2>
+      <button class="btn btn-solid btn-large" id="menuCtaBtn">VEDI IL MENU COMPLETO</button>
+      <p class="menu-cta-note">Il menu digitale si apre in una nuova scheda.</p>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- MENU PREVIEW -->
+  <!-- ============================= -->
+  <section class="menu-preview" id="menu-preview">
+    <div class="section-inner">
+      <span class="eyebrow">MENU</span>
+      <h2 class="section-title">UN ASSAGGIO<br>DEL MENU.</h2>
+
+      <div class="menu-tabs" id="menuTabs" role="tablist" aria-label="Categorie del menu"></div>
+      <div class="menu-panels" id="menuPanels"></div>
+
+      <p class="menu-disclaimer">Il menu può essere soggetto a variazioni.</p>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- FULL-BLEED PHOTO -->
+  <!-- ============================= -->
+  <section class="full-bleed" data-placeholder="FULL-BLEED — foto de prato ou ambiente, alto impacto, largura total">
+    <!-- EDITAR AQUI — FOTOS: substituir por <img src="assets/images/full-bleed.jpg" alt="Piatto tipico salvadoreño servito ad Angulo 503" loading="lazy" decoding="async"> -->
+    <div class="full-bleed-overlay">
+      <h2 class="full-bleed-title">UN VIAGGIO<br>DI SAPORI.</h2>
+      <p class="full-bleed-sub">Dalla cucina salvadoreña alla tavola milanese.</p>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- GALLERY -->
+  <!-- ============================= -->
+  <section class="gallery" id="gallery">
+    <div class="section-inner">
+      <span class="eyebrow eyebrow-light">GALLERY</span>
+      <h2 class="section-title section-title-light">DENTRO ANGULO 503.</h2>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"><!-- populated by script.js from galleryData --></div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Visualizzatore immagini" hidden>
+    <button class="lightbox-close" id="lightboxClose" aria-label="Chiudi">&times;</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightboxPrev" aria-label="Immagine precedente">&#8249;</button>
+    <div class="lightbox-media" id="lightboxMedia"></div>
+    <button class="lightbox-arrow lightbox-next" id="lightboxNext" aria-label="Immagine successiva">&#8250;</button>
+  </div>
+
+  <!-- ============================= -->
+  <!-- EXPERIENCE -->
+  <!-- ============================= -->
+  <section class="experience">
+    <div class="section-inner">
+      <h2 class="section-title">NON È SOLO CENA.</h2>
+      <div class="experience-grid">
+        <div class="experience-item reveal-on-scroll">
+          <span class="experience-num">01</span>
+          <h3>SAPORE</h3>
+          <p>Ricette autentiche, ingredienti curati, sapori decisi che raccontano El Salvador.</p>
+        </div>
+        <div class="experience-item reveal-on-scroll">
+          <span class="experience-num">02</span>
+          <h3>CONVIVIALITÀ</h3>
+          <p>Piatti pensati per essere condivisi, in un'atmosfera calda e informale.</p>
+        </div>
+        <div class="experience-item reveal-on-scroll">
+          <span class="experience-num">03</span>
+          <h3>SCOPERTA</h3>
+          <p>Un piccolo viaggio culturale, dal primo piatto all'ultimo cocktail.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= -->
+  <!-- LOCATION -->
+  <!-- ============================= -->
+  <section class="location" id="location">
+    <div class="section-inner location-inner">
+      <div class="location-copy">
+        <span class="eyebrow eyebrow-light">DOVE SIAMO</span>
+        <h2 class="section-title section-title-light">VENITE A TROVARCI.</h2>
+        <address>
+          Viale Luigi Torelli, 5<br>
+          20158 Milano MI, Italia
+        </address>
+        <p class="location-phone">
+          <a href="tel:+393715601539">+39 371 560 1539</a>
+        </p>
+        <div class="location-ctas">
+          <a class="btn btn-solid" href="https://www.google.com/maps/place/angulo+503+restaurante/@45.4958027,9.170763,19z/" target="_blank" rel="noopener noreferrer">APRI IN GOOGLE MAPS</a>
+          <a class="btn btn-outline" href="tel:+393715601539">CHIAMA</a>
+        </div>
+      </div>
+      <div class="location-media" data-placeholder="LOCATION — foto de fachada/entrada do restaurante">
+        <!-- EDITAR AQUI — FOTOS: substituir por <img src="assets/images/restaurant-detail.jpg" alt="Ingresso di Angulo 503, Viale Luigi Torelli 5, Milano" loading="lazy" decoding="async"> -->
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============================= -->
+<!-- FOOTER -->
+<!-- ============================= -->
+<footer class="site-footer">
+  <div class="section-inner footer-inner">
+    <div class="footer-brand">
+      <span class="logo-line">ANGULO 503</span>
+      <p>RESTAURANTE SALVADOREÑO<br>MILANO</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Link footer">
+      <a href="#ristorante">RISTORANTE</a>
+      <a href="#menu-preview">MENU</a>
+      <a href="#gallery">GALLERY</a>
+      <a href="#location">CONTATTI</a>
+    </nav>
+
+    <div class="footer-contact">
+      <a href="tel:+393715601539">+39 371 560 1539</a>
+      <address>Viale Luigi Torelli, 5<br>20158 Milano MI, Italia</address>
+      <a href="https://www.google.com/maps/place/angulo+503+restaurante/@45.4958027,9.170763,19z/" target="_blank" rel="noopener noreferrer">Google Maps</a>
+      <!-- EDITAR AQUI — SOCIAL: link oculto ate' que INSTAGRAM_URL seja preenchido em script.js -->
+      <a href="#" id="footerInstagram" hidden target="_blank" rel="noopener noreferrer">Instagram</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 Angulo 503</span>
+  </div>
+</footer>
+
+<!-- Mobile fixed menu CTA -->
+<a href="#menu-preview" class="mobile-menu-fab" id="mobileMenuFab">VEDI IL MENU</a>
+
+<script src="script.js"></script>
+</body>
+</html>
