@@ -31,11 +31,11 @@
      ===================================================== */
   const signatureDishes = [
     { name: "Churrasco “503”", desc: "Carne alla griglia, il piatto forte della casa.", price: "€25", size: "large", ph: "Churrasco 503 — foto do prato" },
-    { name: "Pupusas", desc: "L'anima di El Salvador, fatte a mano.", price: "da €2", size: "regular", ph: "Pupusas — foto do prato" },
-    { name: "Chicharrón con Yuca", desc: "Croccante, servito con yuca e curtido.", price: "€15", size: "regular", ph: "Chicharrón con yuca — foto do prato" },
+    { name: "Pupusas", desc: "L'anima di El Salvador, fatte a mano.", price: "da €2", size: "regular", ph: "Pupusas — foto do prato", img: "assets/images/pupusas-plancha.jpg", imgAlt: "Pupusas alla piastra, Angulo 503" },
+    { name: "Chicharrón con Yuca", desc: "Croccante, servito con yuca e curtido.", price: "€15", size: "regular", ph: "Chicharrón con yuca — foto do prato", img: "assets/images/yuca-frita.jpg", imgAlt: "Chicharrón con yuca, Angulo 503" },
     { name: "Pescado Frito", desc: "Pesce fritto secondo la tradizione salvadoreña.", price: "€20", size: "small", ph: "Pescado frito — foto do prato" },
-    { name: "Camarones Empanizados", desc: "Gamberi impanati, croccanti fuori, teneri dentro.", price: "€18", size: "small", ph: "Camarones — foto do prato" },
-    { name: "Cena Típica", desc: "Un assaggio completo della cucina di casa.", price: "€17", size: "regular", ph: "Cena típica — foto do prato" }
+    { name: "Camarones Empanizados", desc: "Gamberi impanati, croccanti fuori, teneri dentro.", price: "€18", size: "small", ph: "Camarones — foto do prato", img: "assets/images/camarones-empanizados.jpg", imgAlt: "Camarones empanizados, Angulo 503" },
+    { name: "Cena Típica", desc: "Un assaggio completo della cucina di casa.", price: "€17", size: "regular", ph: "Cena típica — foto do prato", img: "assets/images/churrasco-plato.jpg", imgAlt: "Cena típica, Angulo 503" }
   ];
 
   /* =====================================================
@@ -124,14 +124,14 @@
      size: "normal" | "wide" | "tall"
      ===================================================== */
   const galleryData = [
-    { ph: "Ambiente — foto horizontal do salão", size: "wide" },
-    { ph: "Pupusas na chapa — detalhe", size: "normal" },
-    { ph: "Prato servido — close-up", size: "tall" },
-    { ph: "Balcão / cozinha em ação", size: "normal" },
-    { ph: "Cocktail — detalhe", size: "normal" },
-    { ph: "Mesa posta — atmosfera noturna", size: "wide" },
-    { ph: "Detalhe de decoração", size: "normal" },
-    { ph: "Fachada / entrada", size: "tall" }
+    { ph: "Ingresso di Angulo 503", size: "wide", img: "assets/images/facciata-ingresso.jpg", alt: "Ingresso di Angulo 503, Viale Luigi Torelli 5" },
+    { ph: "Pupusas alla piastra — dettaglio", size: "normal", img: "assets/images/pupusas-plancha.jpg", alt: "Pupusas alla piastra" },
+    { ph: "Camarones empanizados — dettaglio", size: "tall", img: "assets/images/camarones-empanizados.jpg", alt: "Camarones empanizados" },
+    { ph: "Sopa de res", size: "normal", img: "assets/images/sopa-de-res.jpg", alt: "Sopa de res servita in tavola" },
+    { ph: "Cocktail della casa", size: "normal", img: "assets/images/cocktail-503.jpg", alt: "Cocktail servito da Angulo 503" },
+    { ph: "Piatto misto della casa", size: "wide", img: "assets/images/churrasco-plato.jpg", alt: "Piatto misto servito da Angulo 503" },
+    { ph: "Formaggio filante — pupusa", size: "normal", img: "assets/images/pupusas-queso-fundido.jpg", alt: "Pupusa con formaggio filante" },
+    { ph: "Enchiladas de chorizo", size: "tall", img: "assets/images/enchiladas-chorizo.jpg", alt: "Enchiladas de chorizo servite da Angulo 503" }
   ];
 
   /* =====================================================
@@ -174,7 +174,8 @@
   const dishGrid = document.getElementById('dishGrid');
   const sizeClass = { large: 'large', small: 'small', regular: '' };
   dishGrid.innerHTML = signatureDishes.map(d => `
-    <article class="dish-card ${sizeClass[d.size] || ''}" data-ph="${escapeHtml(d.ph)}">
+    <article class="dish-card ${sizeClass[d.size] || ''}" ${d.img ? '' : `data-ph="${escapeHtml(d.ph)}"`}>
+      ${d.img ? `<img class="dish-photo" src="${escapeHtml(d.img)}" alt="${escapeHtml(d.imgAlt || d.name)}" loading="lazy" decoding="async">` : ''}
       <div class="dish-info">
         <h3 class="dish-name">${escapeHtml(d.name)}</h3>
         <p class="dish-desc">${escapeHtml(d.desc)}</p>
@@ -246,12 +247,13 @@
   galleryData.forEach((g, i) => {
     const item = document.createElement('div');
     item.className = 'gallery-item' + (g.size === 'wide' ? ' wide' : '') + (g.size === 'tall' ? ' tall' : '');
-    item.dataset.ph = g.ph;
+    if (!g.img) item.dataset.ph = g.ph;
     item.dataset.index = i;
     item.setAttribute('role', 'button');
     item.setAttribute('tabindex', '0');
-    item.setAttribute('aria-label', `Apri immagine: ${g.ph}`);
-    item.innerHTML = `<div class="gallery-item-view"><span>VIEW</span></div>`;
+    item.setAttribute('aria-label', `Apri immagine: ${g.alt || g.ph}`);
+    item.innerHTML = (g.img ? `<img src="${escapeHtml(g.img)}" alt="${escapeHtml(g.alt || g.ph)}" loading="lazy" decoding="async">` : '')
+      + `<div class="gallery-item-view"><span>VIEW</span></div>`;
     galleryGrid.appendChild(item);
   });
 
@@ -280,8 +282,10 @@
   }
   function renderLightbox() {
     const g = galleryData[currentIndex];
-    // EDITAR AQUI — FOTOS: sostituire con <img src="..." alt="...">
-    lightboxMedia.innerHTML = `<span>${escapeHtml(g.ph)}</span>`;
+    lightboxMedia.classList.toggle('has-image', Boolean(g.img));
+    lightboxMedia.innerHTML = g.img
+      ? `<img src="${escapeHtml(g.img)}" alt="${escapeHtml(g.alt || g.ph)}">`
+      : `<span>${escapeHtml(g.ph)}</span>`;
   }
   function nextImage() { currentIndex = (currentIndex + 1) % galleryData.length; renderLightbox(); }
   function prevImage() { currentIndex = (currentIndex - 1 + galleryData.length) % galleryData.length; renderLightbox(); }

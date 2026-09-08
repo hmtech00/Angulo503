@@ -9,7 +9,7 @@ Vanilla, sem frameworks nem dependências externas (exceto as fontes do Google F
 /index.html          → estrutura das 11 seções do site
 /style.css            → todo o sistema visual (cores, tipografia, layout, animações)
 /script.js            → conteúdo dinâmico (pratos, menu, galeria) + interações
-/assets/images/       → pasta para as fotos reais do restaurante (vazia por enquanto)
+/assets/images/       → fotos do site (atualmente do Instagram oficial @angulo503_, ver nota abaixo)
 ```
 
 O código está comentado com marcadores `EDITAR AQUI —` em cada ponto pensado para edição futura.
@@ -18,21 +18,27 @@ O código está comentado com marcadores `EDITAR AQUI —` em cada ponto pensado
 
 ## 1. Onde colocar as fotos
 
-Ainda não há fotos reais do Angulo 503 disponíveis, então o site usa blocos de placeholder
-elegantes (sem fotos de banco de imagens e sem imagens geradas por IA), cada um com uma legenda
-discreta dizendo que tipo de foto deve entrar ali (ex.: "HERO — foto do salão ou prato principal").
+O site já usa fotos reais, extraídas do Instagram oficial **[@angulo503_](https://www.instagram.com/angulo503_)**
+(único acervo disponível no momento, sem login — por isso limitado a ~13 posts públicos, em
+resolução de thumbnail ~360–640px). Cada imagem foi recortada para remover textos/preços
+promocionais sobrepostos, mantendo só a fotografia limpa do prato/ambiente. Onde não havia foto que
+representasse fielmente o prato (**Churrasco "503"** e **Pescado Frito**), o placeholder elegante
+foi mantido — para não legendar uma foto com um prato que ela não mostra.
 
-Para substituir por fotos reais:
+**Isso é uma solução temporária.** Fotos de Instagram em baixa resolução ficam nítidas em cards e
+na galeria, mas ficam visivelmente suaves/borradas no **hero** e no **full-bleed** (as maiores telas
+do site, ~1920px). Assim que houver fotografia profissional em alta resolução, priorize substituir
+primeiro `camarones-empanizados.jpg` (hero) e `churrasco-plato.jpg` (full-bleed).
 
-1. Salve os arquivos em `assets/images/` com nomes como:
-   `hero.jpg`, `restaurant-interior.jpg`, `restaurant-detail.jpg`, `pupusas-01.jpg`,
-   `churrasco-503.jpg`, `chicharron.jpg`, `pescado.jpg`, `camarones.jpg`,
-   `gallery-01.jpg` … `gallery-08.jpg`, `full-bleed.jpg`.
-2. Em `index.html`, cada bloco de imagem tem um comentário `<!-- EDITAR AQUI — FOTOS: ... -->`
-   logo acima mostrando exatamente a tag `<img>` a inserir. Basta colar essa tag dentro do
-   elemento indicado (ex. `.hero-media`, `.ristorante-media`, `.location-media`).
-3. Na galeria (seção `GALLERY`) e nos pratos (`PIATTI SIGNATURE`), as imagens são geradas pelo
-   `script.js` a partir de `galleryData` e `signatureDishes`. Adicione um campo `img: "assets/images/nome.jpg"`
+Para substituir qualquer foto por uma nova:
+
+1. Salve o arquivo em `assets/images/` (pode usar o mesmo nome do arquivo atual, para substituir
+   direto, ou um nome novo).
+2. Em `index.html`, os blocos de foto fixos (hero, il ristorante, full-bleed, location) já têm a
+   tag `<img>` — só troque o `src`. Cada um tem um comentário `<!-- EDITAR AQUI — FOTOS: ... -->`
+   logo acima.
+3. Na galeria (seção `GALLERY`) e nos pratos (`PIATTI SIGNATURE`), as imagens vêm do `script.js`
+   a partir de `galleryData` e `signatureDishes`. Edite o campo `img: "assets/images/nome.jpg"`
    a cada item nesses arrays e ajuste o `innerHTML` correspondente para usar `<img src="${d.img}">`
    em vez do placeholder — ou peça para eu fazer essa alteração quando as fotos estiverem prontas.
 
